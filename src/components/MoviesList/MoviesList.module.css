@@ -1,0 +1,20 @@
+.list {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+/* .item {
+} */
+a {
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 200ms var(--timing-function),
+}
+a:hover {
+    color: var(--second-text-color);
+}
+a:active {
+    color: var(--accent-color);
+}
+
