@@ -1,0 +1,32 @@
+.castList {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.castItem {
+  padding: 5px;
+  background-color: var(--background-color-component);
+  border-radius: 5px;
+  box-shadow: var(--box-shadow);
+  list-style: none;
+  flex-basis: calc((100% - 60px) / 3);
+  display: flex;
+}
+.actorProfile {
+  width: 80px;
+}
+.tumb {
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+}
+.actorName {
+  font-weight: 500;
+}
+/* .actorCharacter{
+
+} */

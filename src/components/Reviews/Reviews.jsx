@@ -1,11 +1,21 @@
-const { useParams } = require('react-router-dom');
+import { useEffect, useState } from 'react';
+import { getMovieIdReviewsApi } from '../../API/serviceApi';
+import { useParams } from 'react-router-dom';
 
 const Reviews = () => {
-  const { param } = useParams();
-  console.log(param);
+  const [movieReviewsObj, setMovieReviewsObj] = useState([]);
+  console.log(movieReviewsObj);
+  const { movieId } = useParams('');
+  console.log(movieId);
+
+  useEffect(() => {
+    getMovieIdReviewsApi(movieId).then(movie => {
+      setMovieReviewsObj(movie);
+    });
+  }, [movieId]);
   return (
     <>
-      <div>Reviews: {param}</div>
+      <div>Reviews: {movieId}</div>
     </>
   );
 };

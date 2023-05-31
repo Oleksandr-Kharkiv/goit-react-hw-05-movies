@@ -1,0 +1,24 @@
+.wrap {
+  margin-top: 10px;
+  display: flex;
+  padding: 5px;
+  background-color: var(--background-color-component);
+  border-radius: 5px;
+  box-shadow: var(--box-shadow);
+}
+.movieImg {
+  width: 200px;
+}
+.tumb {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 10px;
+}
+
+.movieGenres {
+    display: flex;
+    gap: 10px;
+}
+

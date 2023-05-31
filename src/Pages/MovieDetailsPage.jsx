@@ -1,34 +1,26 @@
 import { useEffect, useState } from 'react';
-import {  useParams, Link, Outlet } from 'react-router-dom';
-import { getMovieIdApi } from 'API/serviceApi'
+import { useParams, Outlet } from 'react-router-dom';
+import { getMovieIdApi } from 'API/serviceApi';
+import MovieInfo from '../components/MovieInfo/MovieInfo';
+import LinksAddInfo from '../components/LinksAddInfo/LinksAddInfo';
 
 const MovieDetails = () => {
   const [movieObj, setMovieObj] = useState([]);
-  const { movieId } = useParams('')                     
+  const { movieId } = useParams('');
 
   useEffect(() => {
     getMovieIdApi(movieId).then(movie => {
-      setMovieObj(movie.results);
-    })
-  },[movieId]);
-  const {genres, poster_path} = movieObj
-  const moviePoster = `https://image.tmdb.org/t/p/w500${movieObj.poster_path}`
-    console.log(poster_path);
-    console.log(genres);
+      setMovieObj(movie);
+    });
+  }, [movieId]);
+
   return (
     <>
-      <div>MovieDetails: {movieId}</div>
-      <button type='button'>Go back</button>
-      <img src={moviePoster} alt="skdfjgskdjg" />
-      <h3>title</h3>
-      <ul>
-        <li>
-          <Link to="cast">Cast</Link>
-        </li>
-        <li>
-          <Link to="reviews">Reviews</Link>
-        </li>
-      </ul>
+      <button type="button">
+        👈 Go back
+      </button>
+      <MovieInfo movieObj={movieObj} />
+      <LinksAddInfo/>
       <Outlet />
     </>
   );
