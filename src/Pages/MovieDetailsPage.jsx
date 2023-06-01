@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useParams, Outlet } from 'react-router-dom';
+import { useParams, Outlet, Link } from 'react-router-dom';
 import { getMovieIdApi } from 'API/serviceApi';
 import MovieInfo from '../components/MovieInfo/MovieInfo';
 import LinksAddInfo from '../components/LinksAddInfo/LinksAddInfo';
@@ -16,9 +16,9 @@ const MovieDetails = () => {
 
   return (
     <>
-      <button type="button">
+      <Link>
         👈 Go back
-      </button>
+      </Link>
       <MovieInfo movieObj={movieObj} />
       <LinksAddInfo/>
       <Outlet />
