@@ -1,0 +1,22 @@
+.reviewsList {
+    margin-top: 15px;
+    padding-inline-start: 30px;
+    padding-inline-end: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.reviewsItem {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: var(--background-color-component);
+    box-shadow: var(--box-shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .autor{
+    font-weight: 500;
+  }

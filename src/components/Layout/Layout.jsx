@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import css from './Layout.module.css';
 import { Outlet } from 'react-router-dom';
 import Header from '../Header/Header';
@@ -8,7 +8,9 @@ const Layout = () => {
     <>
       <Header />
       <main className={css.container}>
-        <Outlet />
+        <Suspense fallback={<div>Loading...</div>}>
+          <Outlet />
+        </Suspense>
       </main>
     </>
   );

@@ -1,5 +1,6 @@
 .castList {
   margin-top: 10px;
+  padding: 10px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -11,7 +12,7 @@
   border-radius: 5px;
   box-shadow: var(--box-shadow);
   list-style: none;
-  flex-basis: calc((100% - 60px) / 3);
+  flex-basis: calc((100% - 45px) / 3);
   display: flex;
 }
 .actorProfile {
@@ -27,6 +28,4 @@
 .actorName {
   font-weight: 500;
 }
-/* .actorCharacter{
 
-} */

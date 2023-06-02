@@ -1,7 +1,6 @@
 import css from './MovieInfo.module.css';
 
 const MovieInfo = ({ movieObj }) => {
-  console.log(movieObj);
   const { title, original_title, overview, genres, poster_path, vote_average } =
     movieObj;
   
