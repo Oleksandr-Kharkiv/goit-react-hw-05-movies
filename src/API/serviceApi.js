@@ -13,7 +13,7 @@ export const getTrendMoviesApi = async () => {
 
 export const getSearchMoviesApi = async (query) => {
   try {
-    const response = await fetch(`${BASE_URL}/search/movie?api_key=${KEY}&query=${query}&include_adult=false&language=en-US&page=1`);
+    const response = await fetch(`${BASE_URL}/search/movie?api_key=${KEY}&${query}&include_adult=false&language=en-US&page=1`);
     const movies = await response.json();
     return movies
   } catch (error) {

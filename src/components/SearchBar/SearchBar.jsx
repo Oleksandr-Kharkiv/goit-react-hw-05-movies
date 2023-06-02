@@ -1,7 +1,9 @@
-import css from './SearchBar.module.css';
 import { useState } from 'react';
+import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
+import css from './SearchBar.module.css';
 
-const SearchBar = ({handleFormSubmit}) => {
+const SearchBar = ({ handleFormSubmit }) => {
   const [inputValue, setInputValue] = useState(null);
 
   const handleSearchParamChange = e => {
@@ -11,7 +13,7 @@ const SearchBar = ({handleFormSubmit}) => {
   const handleSubmit = e => {
     e.preventDefault();
     if (inputValue === '') {
-      return alert('Enter or change your search query');
+      return toast.info('Enter or change your search query');
     }
     handleFormSubmit(inputValue);
     setInputValue('');
@@ -20,13 +22,15 @@ const SearchBar = ({handleFormSubmit}) => {
   return (
     <form className={css.searchForm} onSubmit={handleSubmit}>
       <input
-      className={css.formInput}
+        className={css.formInput}
         type="text"
         autoComplete="off"
         autoFocus
         onChange={handleSearchParamChange}
       />
-      <button className={css.formBtn} type="submit">Search</button>
+      <button className={css.formBtn} type="submit">
+        Search
+      </button>
     </form>
   );
 };

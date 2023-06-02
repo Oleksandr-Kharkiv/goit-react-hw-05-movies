@@ -1,23 +1,24 @@
 import { useState, useEffect} from 'react';
+import { useSearchParams } from "react-router-dom";
 import { getSearchMoviesApi } from '../API/serviceApi';
 import SearchBar from '../components/SearchBar/SearchBar';
 import MoviesList from '../components/MoviesList/MoviesList';
 
 const MoviesPage = () => {
   const [movies, setMovies] = useState([]);
-  const [searchQuery, setSearchQuery] = useState('');
-
-  const handleFormSubmit = inputValue => {
-    setSearchQuery(inputValue);
-  };
+  const [searchParams, setSearchParams] = useSearchParams();
   
+   const handleFormSubmit = inputValue => {
+    setSearchParams({query: `${inputValue}`});
+  };
+
   useEffect(() => {
-    if(!searchQuery) {
+    if(searchParams === "") {
       return
     }
-    getSearchMoviesApi(searchQuery).then(movies =>
+    getSearchMoviesApi(searchParams).then(movies =>
       setMovies(movies.results));
-      }, [searchQuery]);
+      }, [searchParams]);
       
   return (
     <>

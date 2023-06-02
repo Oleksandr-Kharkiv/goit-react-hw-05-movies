@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import { getMovieIdCastApi } from '../../API/serviceApi';
 import { useParams } from 'react-router-dom';
+import { getMovieIdCastApi } from '../../API/serviceApi';
 import css from './Cast.module.css';
 
 const Cast = () => {
@@ -15,18 +15,30 @@ const Cast = () => {
 
   return (
     <ul className={css.castList}>
-      {movieCast &&
-        movieCast.map(({ id, character, name, profile_path }) => {
-          return (
-            <li key={id} className={css.castItem}>
-              {profile_path ? <img src={`https://image.tmdb.org/t/p/w500${profile_path}`} alt={name} className={css.actorProfile} /> : <img src="../../images/images.png" alt="🥺 No profile" className={css.actorProfile} height="120"/>}
-              <div className={css.tumb}>
-                <p className={css.actorName}>{name}</p>
-                <p className={css.actorCharacter}>Character: {character}</p>
-              </div>
-            </li>
-          );
-        })}
+      {movieCast.length !== 0 ? (
+        movieCast.map(({ id, character, name, profile_path }) => (
+          <li key={id} className={css.castItem}>
+            {profile_path ? (
+              <img
+                src={`https://image.tmdb.org/t/p/w500${profile_path}`}
+                alt={name}
+                width="80"
+                height="120"
+              />
+            ) : (
+              <p>🥺 No photo</p>
+            )}
+            <div className={css.tumb}>
+              <p className={css.actorName}>{name}</p>
+              <p className={css.actorCharacter}>Character: {character}</p>
+            </div>
+          </li>
+        ))
+      ) : (
+        <li key={999999} className={css.noCastItem}>
+          We don't have any information about casts for this movie{' '}
+        </li>
+      )}
     </ul>
   );
 };

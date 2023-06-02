@@ -15,9 +15,6 @@
   flex-basis: calc((100% - 45px) / 3);
   display: flex;
 }
-.actorProfile {
-  width: 80px;
-}
 .tumb {
   padding-left: 20px;
   display: flex;
@@ -29,3 +26,12 @@
   font-weight: 500;
 }
 
+.noCastItem {
+  margin: 0 30px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: var(--background-color-component);
+  box-shadow: var(--box-shadow);
+  display: block;
+  width: 100%;
+}
