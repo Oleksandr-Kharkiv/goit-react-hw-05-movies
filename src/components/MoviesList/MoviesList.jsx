@@ -11,7 +11,7 @@ const MoviesList = ({ movies }) => {
         movies.map(movie => {
           return (
             <li className={css.item} key={movie.id}>
-              <Link to={`/movies/${movie.id}`} state={{ from: location }}>{movie.title}</Link>
+              <Link to={`/movies/${movie.id}`} state={{ from: location }} className={css.movieLink}>{movie.title}</Link>
             </li>
           );
         })}
