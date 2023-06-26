@@ -20,6 +20,10 @@
   font-weight: 700;
   transition: color 200ms var(--timing-function);
 }
+.active{
+  composes: navLink;
+  outline: 2px dashed red;
+}
 .navLink:hover {
   color: var(--second-text-color);
 }
